@@ -1,0 +1,79 @@
+/* General Body Styling */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f5f5dc; /* light beige */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    background-color: #ffffff; /* white content block */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1); /* subtle shadow for depth */
+    text-align: center;
+}
+
+
+/* Header */
+header h1 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #555;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* Professional Photo */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0066cc;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* Intro Paragraph */
+.intro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Navigation Buttons */
+.navigation a.btn {
+    background-color: #0066cc;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.navigation a.btn:hover {
+    background-color: #004999;
+}
+/* Accent line below intro */
+.accent-line {
+    border: 1px solid #0066cc;
+    width: 50%;
+    margin: 20px auto;
+}
+
+/* Footer styling */
+footer p {
+    color: #555;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Travel Experience</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/scratch.css">
+</head>
+<body>
+
+    <h1>My Travel Experience</h1>
+
+    <!-- On-page anchor link -->
+    <p>
+        <a href="#gallery">Jump to Image Section</a>
+    </p>
+
+    <!-- Intro section -->
+    <div class="intro">
+        <p>
+            This page was created to show some of my favorite travel experiences. I love exploring and getting to know new places, especially in Europe!
+        </p>
+    </div>
+
+    <!-- Nested list section -->
+    <div class="content">
+        <h2>My Favorite Places</h2>
+        <ol>
+            <li>Switzerland
+                <ul>
+                    <li>Lauterbrunnen Valley</li>
+                    <li>Zermatt</li>
+                    <li>Bern</li>
+                </ul>
+            </li>
+            <li>France</li>
+            <li>England</li>
+            <li>Germany</li>
+            <li>Belgium</li>
+        </ol>
+    </div>
+
+    <!-- Gallery section with image and YouTube video -->
+    <div class="gallery" id="gallery">
+        <h2>The Beauty of the Alps</h2>
+        <p>
+            Through my travels, Switzerland and the Alps have been some of my favorite places to visit.
+        </p>
+        <img src="./images/inspiration.jpg" alt="Inspiration image" width="400">
+
+        <br>
+
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/eSgavLrspO0"
+            title="Europe Travel Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Tableau section -->
+    <div class="tableau-section">
+        <h2>Traveling to Europe Important Information</h2>
+
+        <div class='tableauPlaceholder' id='viz1765951125882' style='position: relative'>
+            <noscript>
+                <a href='#'>
+                    <img alt='Dashboard 1' src='https://public.tableau.com/static/images/Eu/EuropeTraveling/Dashboard1/1_rss.png' style='border: none' />
+                </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='EuropeTraveling/Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/Eu/EuropeTraveling/Dashboard1/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+            </object>
+        </div>
+
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1765951125882');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if (divElement.offsetWidth > 800) {
+                vizElement.style.width='1000px';
+                vizElement.style.height='827px';
+            } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width='1000px';
+                vizElement.style.height='827px';
+            } else {
+                vizElement.style.width='100%';
+                vizElement.style.height='727px';
+            }
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+    </div>
+
+    <br>
+
+    <p>
+        <a href="guessing-game.html">Play Guess the Country Game</a>
+    </p>
+
+    <br>
+
+    <!-- Navigation back to home -->
+    <div class="navigation">
+        <a href="index.html">Back to Home</a>
+    </div>
+
+</body>
+</html>

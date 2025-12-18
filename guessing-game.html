@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Country - Europe Edition</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .country-image {
+            max-width: 500px;
+            height: auto;
+            margin: 20px auto;
+            border: 2px solid #2c3e50;
+            border-radius: 8px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 12px;
+            font-size: 16px;
+            margin-left: 5px;
+            cursor: pointer;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #004999;
+        }
+        #feedback {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Guess the Country - Europe Edition</h1>
+    <p>Look at the image and type the name of the country!</p>
+
+    <img id="countryImg" class="country-image" src="" alt="Country Image">
+
+    <div>
+        <input type="text" id="guessInput" placeholder="Enter country name">
+        <button id="submitBtn">Submit</button>
+        <button id="nextBtn" style="display:none;">Next Country</button>
+    </div>
+
+    <p id="feedback"></p>
+
+    <script>
+        const countries = [
+            {name: "Austria", image: "./images/austria.jpg"},
+            {name: "Belgium", image: "./images/belgium.jpg"},
+            {name: "England", image: "./images/england.jpg"},
+            {name: "France", image: "./images/france.jpg"},
+            {name: "Germany", image: "./images/germany.jpg"},
+            {name: "Greece", image: "./images/greece.jpg"},
+            {name: "Italy", image: "./images/italy.jpg"},
+            {name: "Netherlands", image: "./images/netherlands.jpg"},
+            {name: "Spain", image: "./images/spain.jpg"},
+            {name: "Switzerland", image: "./images/switzerland.jpg"}
+        ];
+
+        let currentCountry;
+        let usedIndices = [];
+
+        function pickRandomCountry() {
+            if (usedIndices.length === countries.length) {
+                document.getElementById("feedback").textContent = "You've guessed all countries! 🎉";
+                document.getElementById("countryImg").style.display = "none";
+                document.getElementById("submitBtn").style.display = "none";
+                document.getElementById("nextBtn").style.display = "none";
+                return;
+            }
+            let index;
+            do {
+                index = Math.floor(Math.random() * countries.length);
+            } while (usedIndices.includes(index));
+            usedIndices.push(index);
+            currentCountry = countries[index];
+            document.getElementById("countryImg").src = currentCountry.image;
+            document.getElementById("feedback").textContent = "";
+            document.getElementById("guessInput").value = "";
+            document.getElementById("nextBtn").style.display = "none";
+        }
+
+        document.getElementById("submitBtn").addEventListener("click", function() {
+            const guess = document.getElementById("guessInput").value.trim().toLowerCase();
+            if (guess === currentCountry.name.toLowerCase()) {
+                document.getElementById("feedback").textContent = "✅ Correct!";
+                document.getElementById("nextBtn").style.display = "inline-block";
+            } else {
+                document.getElementById("feedback").textContent = "❌ Try again!";
+            }
+        });
+
+        document.getElementById("nextBtn").addEventListener("click", pickRandomCountry);
+
+        // Initialize first country
+        pickRandomCountry();
+    </script>
+
+</body>
+</html>
